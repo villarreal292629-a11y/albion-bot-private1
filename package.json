@@ -1,1 +1,16 @@
-
+{
+  "name": "albion-resource-bot",
+  "version": "1.0.0",
+  "description": "Bot para Albion Online",
+  "main": "bot-discord.js",
+  "scripts": {
+    "start": "node bot-discord.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "firebase": "^10.8.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
