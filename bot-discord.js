@@ -11,9 +11,15 @@ const firebaseConfig = {
     appId: "1:433735759115:web:0b350353fc8854866bde0e"
 };
 
-const DISCORD_TOKEN = "MTQ4NDY3ODEzMDg0MDEwOTE5Ng.GvrD0r.EN-qUB3yJCXNNIpE5Ujh2W8-pdnA3EQgSKqFyM";
-const CANAL_RECURSOS_ID = "1484338186959327342";
-const CANAL_CONTADORES_ID = "1484723137177452654";
+// ⚠️ EL TOKEN SE TOMA DE LAS VARIABLES DE ENTORNO ⚠️
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
+const CANAL_RECURSOS_ID = process.env.CANAL_RECURSOS_ID || "1484338186959327342";
+const CANAL_CONTADORES_ID = process.env.CANAL_CONTADORES_ID || "1484723137177452654";
+
+if (!DISCORD_TOKEN) {
+    console.error('❌ ERROR: DISCORD_TOKEN no está configurado en las variables de entorno');
+    process.exit(1);
+}
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
